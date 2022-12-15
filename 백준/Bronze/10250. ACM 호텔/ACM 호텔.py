@@ -4,9 +4,6 @@ for p in range(hotel):
     guest = 0
 
     if n // floor == n / floor:
-        ho = int(n // floor)
-        print(floor * 100 + ho)
+        print(floor * 100 + n // floor)
     else:
-        dong = (n % floor)
-        ho = int(n // floor) + 1
-        print(dong * 100 + ho)
+        print(n % floor * 100 + n // floor + 1)
