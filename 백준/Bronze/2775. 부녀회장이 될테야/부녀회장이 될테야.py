@@ -10,6 +10,4 @@ for i in range(n):
         for k in range(ho):
             sums.append(sum(people[0:k+1]))
         people = sums.copy()
-        #print(people)
     print(people[ho-1])
-    #print(people)
