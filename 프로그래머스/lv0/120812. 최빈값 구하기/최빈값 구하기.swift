@@ -1,4 +1,9 @@
-func solution(_ array: [Int]) -> Int {
-    let sorted = Dictionary(grouping: array) { $0 }.sorted { $0.value.count > $1.value.count }
-    return sorted.count > 1 && sorted[0].value.count == sorted[1].value.count ? -1 : sorted[0].key
+import Foundation
+
+func solution(_ array:[Int]) -> Int {
+    var counter: [Int: Int] = [:]
+    array.forEach { counter[$0] = (counter[$0] ?? 0) + 1 }
+
+    let result = counter.filter { $0.value == counter.values.max() }
+    return result.count == 1 ? result.first!.key : -1
 }
